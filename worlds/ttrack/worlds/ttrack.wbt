@@ -1,0 +1,180 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.954876575577866 0.2834215390086128 -0.08878601600858926 5.366190375996441
+  position -1.3545407774878075 3.3620078693735973 2.4763424988021328
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF right_wall SolidBox {
+  translation 0 0.1 -1.865
+  name "wall#4"
+  size 3.6 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF left_wall SolidBox {
+  translation -1.2 0.1 -0.675
+  name "wall#4(2)"
+  size 1.2 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF la_wall SolidBox {
+  translation 1.2 0.1 -0.675
+  name "wall#4(6)"
+  size 1.2 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF tc_wall SolidBox {
+  translation -0.595 0.1 -0.08
+  rotation 0 1 0 -1.5707953071795862
+  name "wall#4(3)"
+  size 1.2 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF bc_wall SolidBox {
+  translation 0.595 0.1 -0.08
+  rotation 0 1 0 -1.5707953071795862
+  name "wall#4(5)"
+  size 1.2 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF lc_wall SolidBox {
+  translation 0 0.1 0.525
+  rotation 0 1 0 1.01503e-06
+  name "wall#4(4)"
+  size 1.2 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF top_wall SolidBox {
+  translation -1.805 0.1 -1.27
+  rotation 0 1 0 -1.5707953071795862
+  name "wall#4(1)"
+  size 1.2 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF ba_wall SolidBox {
+  translation 1.805 0.1 -1.27
+  rotation 0 1 0 -1.5707953071795862
+  name "wall#4(7)"
+  size 1.2 0.2 0.01
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+Floor {
+  size 5 5
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    roughness 0.5
+    metalness 0
+  }
+}
+DEF can Solid {
+  translation -0.26 0.08 -1.2
+  children [
+    DEF canshape Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.115
+        radius 0.0325
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE canshape
+  physics Physics {
+    density -1
+    mass 0.013
+  }
+}
+DEF can Solid {
+  translation -1.4 0.08 -1.52
+  children [
+    DEF canshape Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.115
+        radius 0.0325
+      }
+    }
+  ]
+  boundingObject USE canshape
+  physics Physics {
+    density -1
+    mass 0.013
+  }
+}
+DEF can Solid {
+  translation -0.57 0.08 -1.2
+  children [
+    DEF canshape Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.115
+        radius 0.0325
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE canshape
+  physics Physics {
+    density -1
+    mass 0.013
+  }
+}
+DEF can Solid {
+  translation -0.42 0.08 -1.2
+  children [
+    DEF canshape Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.115
+        radius 0.0325
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE canshape
+  physics Physics {
+    density -1
+    mass 0.013
+  }
+}
