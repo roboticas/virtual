@@ -2,7 +2,8 @@
 Webots based virtual environments for robotics
 
 ## Sumoring
-This is a platform for virtual webot robots to do mini-sumo games.
+This is a platform for virtual webot robots to do mini-sumo games. 
+Usage : create a new webots project and copy the .wbt file from this repository to it.
 
 ![Sumo ring](/sumoring.jpg "sumoring in webots")
 
