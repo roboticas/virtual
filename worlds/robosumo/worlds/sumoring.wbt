@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.3644692890997146 0.8601798047339676 0.35672516147726685 4.571210375095506
-  position -0.9334133168785577 0.9384360148127541 -0.029553016030080828
+  orientation 0.43436436795321104 0.7947952639168893 0.42382553522397604 4.407797681139791
+  position -0.716401448082799 1.1166632813196897 -0.1539876045364705
   follow "sumoring.obj"
 }
 TexturedBackground {
@@ -3685,4 +3685,18 @@ DEF SumobotRed Robot {
   cpuConsumption 1.11
   window "e-puck"
   remoteControl "e-puck_bluetooth"
+}
+DEF GrassFloor Floor {
+  translation 0 -0.01 0
+  size 1000 1000
+  tileSize 1 1
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/ground_grass.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+  }
 }
