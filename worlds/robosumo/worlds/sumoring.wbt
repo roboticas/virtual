@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.43436436795321104 0.7947952639168893 0.42382553522397604 4.407797681139791
-  position -0.716401448082799 1.1166632813196897 -0.1539876045364705
+  orientation 0.3154952947867023 0.893837006442779 0.318619090578175 4.502789439903736
+  position -1.0386285918905238 0.8375164430459838 -0.19043615323543828
   follow "sumoring.obj"
 }
 TexturedBackground {
@@ -2040,14 +2040,18 @@ DEF SumobotBlue Robot {
       translation 0 0.0003 -0.03
       rotation 0 0 1 -1.57
       children [
-        DEF ir0 DistanceSensor {
+        DEF gs0 DistanceSensor {
           translation 0 -0.01 0
-          name "ir0"
+          name "gs0"
           type "infra-red"
         }
-        DEF ir1 DistanceSensor {
+        DEF gs1 DistanceSensor {
+          name "gs1"
+          type "infra-red"
+        }
+        DEF gs2 DistanceSensor {
           translation 0 0.01 0
-          name "ir1"
+          name "gs2"
           type "infra-red"
         }
       ]
@@ -3632,14 +3636,18 @@ DEF SumobotRed Robot {
       translation 0 0.0003 -0.03
       rotation 0 0 1 -1.57
       children [
-        DEF ir0 DistanceSensor {
+        DEF gs0 DistanceSensor {
           translation 0 -0.01 0
-          name "ir0"
+          name "gs0"
           type "infra-red"
         }
-        DEF ir1 DistanceSensor {
+        DEF gs1 DistanceSensor {
+          name "gs1"
+          type "infra-red"
+        }
+        DEF gs2 DistanceSensor {
           translation 0 0.01 0
-          name "ir1"
+          name "gs2"
           type "infra-red"
         }
       ]

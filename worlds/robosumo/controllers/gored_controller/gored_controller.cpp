@@ -36,10 +36,10 @@ int main(int argc, char** argv) {
 	Motor* rightMotor = robot->getMotor("right wheel motor");
 
 	// Initialise ground facing, border detection sensors
-	DistanceSensor* ir0 = robot->getDistanceSensor("ir0");
-	ir0->enable(timeStep);
-	DistanceSensor* ir1 = robot->getDistanceSensor("ir1");
-	ir1->enable(timeStep);
+	DistanceSensor* gs0 = robot->getDistanceSensor("gs0");
+	gs0->enable(timeStep);
+	DistanceSensor* gs2 = robot->getDistanceSensor("gs2");
+	gs2->enable(timeStep);
 
 	// Initialise proximity sensors ps0 to ps7
 	DistanceSensor* ps0 = robot->getDistanceSensor("ps0");
@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
 	rightMotor->setVelocity(MAX_SPEED);
 
 	States state = States::STARTING;
-	double startTime;
+	double startTime = 0;
 	States previousState = state;
 
 	// Main loop:
@@ -74,23 +74,23 @@ int main(int argc, char** argv) {
 	while (robot->step(timeStep) != -1) {
 		// Show change in state
 		if (previousState != state) {
-			printf("State: %d\n", state);
+			printf("State: %d\n", (int) state);
 			previousState = state;
 		}
 
 		// Read the border line sensors:
-		double ir0Val = ir0->getValue();
-		double ir1Val = ir1->getValue();
+		double gs0Val = gs0->getValue();
+		double gs2Val = gs2->getValue();
 
-		// Read the horizontal distance sensors
-		double ps0Val = ps0->getValue();
-		double ps1Val = ps0->getValue();
-		double ps2Val = ps0->getValue();
-		double ps3Val = ps0->getValue();
-		double ps4Val = ps0->getValue();
-		double ps5Val = ps0->getValue();
-		double ps6Val = ps0->getValue();
-		double ps7Val = ps0->getValue();
+		// Example read the horizontal distance sensors
+//		double ps0Val = ps0->getValue();
+//		double ps1Val = ps0->getValue();
+//		double ps2Val = ps0->getValue();
+//		double ps3Val = ps0->getValue();
+//		double ps4Val = ps0->getValue();
+//		double ps5Val = ps0->getValue();
+//		double ps6Val = ps0->getValue();
+//		double ps7Val = ps0->getValue();
 
 
 		switch (state) {
@@ -101,9 +101,9 @@ int main(int argc, char** argv) {
 			break;
 		case States::RUNNING:
 			// Test ground line sensor for border line found
-			if (ir0Val > 100) {
+			if (gs0Val > 100) {
 				// Backup turn at white line border
-		        printf("time:%f ir0:%f ir1:%f\n", robot->getTime(), ir0Val, ir1Val);
+		        printf("time:%f gs0:%f gs2:%f\n", robot->getTime(), gs0Val, gs2Val);
 				leftMotor->setVelocity(-MAX_SPEED);
 				rightMotor->setVelocity(-MAX_SPEED/1.1);
 				state = States::REVERSING;
@@ -118,8 +118,6 @@ int main(int argc, char** argv) {
 			}
 			break;
 		}
-
-		// printf("time:%f ir0:%f ir1:%f\n", robot->getTime(), ir0Val, ir1Val);
 	};
 
 	// Enter here exit cleanup code.
