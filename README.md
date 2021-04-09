@@ -7,7 +7,7 @@ Usage :
 - Download the zip file with all worlds by pressing the green 'code' button on https://github.com/roboticas/virtual and select 'Download ZIP'.
 - Unzip this file in a directory of your choosing.
 - Goto the 'worlds' directory in this directory and copy its contents to the 'webots' directory that you just created.
-- Open webots and select 'File->Open World...' and then load for example the linefollower.wbt world at 'Documents\webots\linefollower\worlds'.
+- Open webots and select 'File->Open World...' and then load for example the 'linefollower.wbt' file at 'Documents\webots\linefollower\worlds'.
 - Make changes to the controller file at the right of your screen to change your robot. 
 - Save the file and then compile by pressing F7. Look at possible error messages in the
   lower window, fix them.
